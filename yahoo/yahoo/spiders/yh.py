@@ -33,15 +33,12 @@ FILE_NAME = 'AAPL'
 
 class YhSpider(scrapy.Spider):
     name = 'yh'
-    allowed_domains = ['toscrape.com']
+    allowed_domains = ['finance.yahoo.com']
     start_urls = ['https://finance.yahoo.com/quote/BTC?p=BTC']
 
     # def start_requests(self):
     #     url = "http://quotes.toscrape.com"
     #     yield scrapy.Request(url=url, callback=self.parse_url)
-
-    def __init__(self):
-        pass
   
     def parse(self, response):
         options = Options()
@@ -54,13 +51,10 @@ class YhSpider(scrapy.Spider):
         driver.get(response.url)
 
 
-        # driver.get("https://finance.yahoo.com/quote/BTC/news?p=BTC")
-        # time.sleep(10)
+        sel = Selector(text=driver.page_source)
 
-        # sel = Selector(text=driver.page_source)
-
-        title = response.xpath(title_pattern).get()
-        dates = response.xpath(date_pattern).get()
+        title = sel.xpath(title_pattern).get()
+        dates = sel.xpath(date_pattern).get()
 
 
 
