@@ -1,0 +1,92 @@
+1639337985539	geckodriver	INFO	Listening on 127.0.0.1:60375
+1639337985568	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilePGPcOb"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1639337987186	Marionette	INFO	Marionette enabled
+Sandbox: SandboxReporter: thread creation failed: Resource temporarily unavailable
+1639338619822	geckodriver	INFO	Listening on 127.0.0.1:58641
+1639338620878	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile4NPoQs"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1639338623007	Marionette	INFO	Marionette enabled
+Sandbox: SandboxBroker: thread creation failed: Resource temporarily unavailable
+[Parent 16825, IPC I/O Parent] WARNING: Failed to launch tab subprocess: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/glue/GeckoChildProcessHost.cpp:761
+[Parent 16825, IPC I/O Parent] WARNING: Failed to launch tab subprocess: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/glue/GeckoChildProcessHost.cpp:761
+JavaScript error: chrome://global/content/elements/browser-custom-element.js, line 1003: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIScriptSecurityManager.getLoadContextContentPrincipal]
+[Parent 16825, IPC I/O Parent] WARNING: Failed to launch tab subprocess: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/glue/GeckoChildProcessHost.cpp:761
+[Parent 16825, IPC I/O Parent] WARNING: Failed to launch tab subprocess: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/glue/GeckoChildProcessHost.cpp:761
+[Parent 16825, IPC I/O Parent] WARNING: Failed to launch tab subprocess: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/glue/GeckoChildProcessHost.cpp:761
+JavaScript error: chrome://global/content/elements/browser-custom-element.js, line 1003: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIScriptSecurityManager.getLoadContextContentPrincipal]
+[Parent 16825, IPC I/O Parent] WARNING: Failed to launch tab subprocess: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/glue/GeckoChildProcessHost.cpp:761
+[Parent 16825, IPC I/O Parent] WARNING: Failed to launch tab subprocess: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/glue/GeckoChildProcessHost.cpp:761
+[Parent 16825, IPC I/O Parent] WARNING: Failed to launch tab subprocess: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/glue/GeckoChildProcessHost.cpp:761
+JavaScript error: chrome://global/content/elements/browser-custom-element.js, line 1003: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIScriptSecurityManager.getLoadContextContentPrincipal]
+[Parent 16825, IPC I/O Parent] WARNING: Failed to launch tab subprocess: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/glue/GeckoChildProcessHost.cpp:761
+[Parent 16825, IPC I/O Parent] WARNING: Failed to launch tab subprocess: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/glue/GeckoChildProcessHost.cpp:761
+[Parent 16825, IPC I/O Parent] WARNING: Failed to launch tab subprocess: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/glue/GeckoChildProcessHost.cpp:761
+JavaScript error: chrome://global/content/elements/browser-custom-element.js, line 1003: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIScriptSecurityManager.getLoadContextContentPrincipal]
+JavaScript error: resource://gre/modules/ExtensionParent.jsm, line 1478: TypeError: messageManager is null
+JavaScript error: resource://gre/modules/ExtensionParent.jsm, line 1478: TypeError: messageManager is null
+JavaScript error: resource://gre/modules/ExtensionParent.jsm, line 1478: TypeError: messageManager is null
+JavaScript error: resource://gre/modules/ExtensionParent.jsm, line 1478: TypeError: messageManager is null
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x230057,name=PBrowser::Msg_UpdateEffects) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x390143,name=PContent::Msg_CommitBrowsingContextTransaction) Channel error: cannot send/recv
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile4NPoQs/search.json.mozlz4", (void 0)))
+[GFX1-]: wr_window_new: Thread(Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" })
+[GFX1-]: Failed to connect WebRenderBridgeChild.
+[GFX1-]: Fallback (SW-)WR to Basic
+[GFX1-]: Compositors might be mixed (5,1)
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 845: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [mozIStorageAsyncStatement.executeAsync]
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 73: NS_ERROR_XPC_GS_RETURNED_FAILURE: ServiceManager::GetService returned failure code:
+1639338656270	geckodriver	INFO	Listening on 127.0.0.1:55161
+1639338656406	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileobunRh"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1639338658062	Marionette	INFO	Marionette enabled
+1639338708711	geckodriver	INFO	Listening on 127.0.0.1:46943
+1639338708731	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilecrXxHV"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1639338710982	Marionette	INFO	Marionette enabled
+[Parent 17351, IPC I/O Parent] WARNING: Failed to launch tab subprocess: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/glue/GeckoChildProcessHost.cpp:761
+[Parent 17351, IPC I/O Parent] WARNING: Failed to launch tab subprocess: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/glue/GeckoChildProcessHost.cpp:761
+JavaScript error: chrome://global/content/elements/browser-custom-element.js, line 1003: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIScriptSecurityManager.getLoadContextContentPrincipal]
+[Parent 17351, IPC I/O Parent] WARNING: Failed to launch tab subprocess: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/glue/GeckoChildProcessHost.cpp:761
+JavaScript error: chrome://global/content/elements/browser-custom-element.js, line 417: TypeError: this.browsingContext is null
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39003B,name=PContent::Msg_UpdateSharedData) Channel error: cannot send/recv
+
+[Parent 17351, Main Thread] WARNING: FileDescriptorSet destroyed with unconsumed descriptors: file /build/firefox-FnEr1Y/firefox-89.0.2+build1/ipc/chromium/src/chrome/common/file_descriptor_set_posix.cc:19
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x390061,name=PContent::Msg_GMPsChanged) Channel error: cannot send/recv
+
+JavaScript error: resource://gre/modules/DeferredTask.jsm, line 184: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsITimer.initWithCallback]
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilecrXxHV/search.json.mozlz4", (void 0)))
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 185: NS_ERROR_UNEXPECTED
+[GFX1-]: wr_window_new: Thread(Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" })
+[GFX1-]: Failed to connect WebRenderBridgeChild.
+[GFX1-]: Fallback (SW-)WR to Basic
+[GFX1-]: Compositors might be mixed (5,1)
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x390029,name=PContent::Msg_PreferenceUpdate) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x390029,name=PContent::Msg_PreferenceUpdate) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x390029,name=PContent::Msg_PreferenceUpdate) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x390029,name=PContent::Msg_PreferenceUpdate) Channel error: cannot send/recv
+
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+JavaScript error: resource:///modules/CustomizableUI.jsm, line 4833: TypeError: aWindow.gNavToolbox.palette is undefined
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+console.warn: SearchService: "_init: abandoning init due to shutting down"
+JavaScript error: , line 0: uncaught exception: 2147500036
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 419))
