@@ -53,5 +53,5 @@ class YhSpider(scrapy.Spider):
     def parse_yahoo_news_contents(self, response):
         item = YahooItem()
         item['title'] = response.xpath('//header/h1/text()').extract_first()
-        item['dates'] = response.xpath('/html/body/div/div/main/div/div/div/div/div/article/div/div/div/div/div/div/div/div/div/div/time//@datetime').extract_first()
+        item['dates'] = response.xpath('/html/body/div/div/main/div/div/div/div/div/article/div/div/div/div/div/div/div/div/div/div/time/@datetime').extract_first()
         yield item
