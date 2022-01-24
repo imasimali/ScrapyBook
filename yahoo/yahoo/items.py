@@ -11,5 +11,5 @@ import scrapy
 class YahooItem(scrapy.Item):
     # define the fields for your item here like:
     title= scrapy.Field()
-    dates=scrapy.Field()
+    dates= scrapy.Field()
     pass

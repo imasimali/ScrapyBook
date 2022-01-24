@@ -25,16 +25,16 @@ class YhSpider(scrapy.Spider):
 
         browser.get(response.request.url)
         browser.execute_script(js)
-        time.sleep(5)
+        time.sleep(2)
         items_list = browser.find_elements_by_xpath('//*[@id="latestQuoteNewsStream-0-Stream"]/ul/li/div/div/div[2]/h3/a')
         
         num_of_items = 0
-        while num_of_items != len(items_list):
+        while num_of_items != len(items_list) or num_of_items <= 50:
             num_of_items = len(items_list)
             l += 5000
             js = 'var q=document.documentElement.scrollTop=%d' %l
             browser.execute_script(js)
-            time.sleep(5)
+            time.sleep(2)
             items_list = browser.find_elements_by_xpath('//*[@id="latestQuoteNewsStream-0-Stream"]/ul/li/div/div/div[2]/h3/a')
 
         for item in items_list:
