@@ -25,7 +25,7 @@ class YhSpider(scrapy.Spider):
 
         browser.get(response.request.url)
         browser.execute_script(js)
-        time.sleep(2)
+        time.sleep(5)
         items_list = browser.find_elements_by_xpath('//*[@id="latestQuoteNewsStream-0-Stream"]/ul/li/div/div/div[2]/h3/a')
         
         num_of_items = 0
