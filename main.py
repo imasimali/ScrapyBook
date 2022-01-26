@@ -12,7 +12,7 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 @app.route('/')
 def hello_world():
-  return '<h1>Hello, World!</h1>'
+  return '<h1>This is ScrapyBook Backend! YOLO!</h1>'
 
 @app.route("/twitter")
 def scrape_twitter():
@@ -29,6 +29,15 @@ def scrape_yahoo():
     filename = time.strftime("%d%H%M%S")
     subprocess.run('cd yahoo && scrapy crawl yh -a code='+stock+' -o '+filename+'.json && cd ..', shell=True)
     df = pd.read_json('yahoo/'+filename+'.json')
+    df1 = json.loads(df.to_json(orient = "index"))
+    return jsonify(df1)
+
+@app.route("/getreuters")
+def scrape_reuters():
+    stock = request.args["stock"]
+    filename = time.strftime("%d%H%M%S")
+    subprocess.run('cd reuters && scrapy crawl rt -a code='+stock+' -o '+filename+'.json && cd ..', shell=True)
+    df = pd.read_json('reuters/'+filename+'.json')
     df1 = json.loads(df.to_json(orient = "index"))
     return jsonify(df1)
 

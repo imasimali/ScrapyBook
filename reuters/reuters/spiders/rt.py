@@ -10,7 +10,11 @@ from reuters.items import ReutersItem
 class RtSpider(scrapy.Spider):
     name = 'rt'
     allowed_domains = ['reuters.com']
-    start_urls = ['https://www.reuters.com/companies/AAPL.O/news']
+    # start_urls = ['https://www.reuters.com/companies/AAPL.O/news']
+
+    def __init__(self, code='', **kwargs):
+        self.start_urls = [f'https://www.reuters.com/companies/{code}.O/news']
+        super().__init__(**kwargs)
 
     def parse(self, response):
         options = Options()
