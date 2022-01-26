@@ -1,4 +1,4 @@
 language = "python3"
 #run = "cd reuters && scrapy crawl rt -o output.csv"
 #run = "cd yahoo && scrapy crawl yh -o output.csv"
-run = "python3 twitter.py"
+run = "python3 main.py"

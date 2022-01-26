@@ -9,7 +9,11 @@ from yahoo.items import YahooItem
 class YhSpider(scrapy.Spider):
     name = 'yh'
     allowed_domains = ['finance.yahoo.com']
-    start_urls = ['https://finance.yahoo.com/quote/MSFT/news']
+    # start_urls = ['https://finance.yahoo.com/quote/'+company+'/news']
+
+    def __init__(self, code='', **kwargs):
+        self.start_urls = [f'https://finance.yahoo.com/quote/{code}/news']
+        super().__init__(**kwargs)
 
     def parse(self, response):
         options = Options()
