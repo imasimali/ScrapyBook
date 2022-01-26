@@ -12,7 +12,7 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 @app.route('/')
 def hello_world():
-  return '<h1>This is ScrapyBook Backend! YOLO!</h1>'
+  return '<h1>This is ScrapyBook backend!</h1></br><h3>You need commands to scrape!<h3/><h5>Contact Asim for help >> hi@asim.id<h5/>'
 
 @app.route("/twitter")
 def scrape_twitter():
