@@ -4,6 +4,7 @@ import os
 import time
 import requests
 import twitter
+import reddit
 import subprocess
 
 app = Flask(__name__)
@@ -19,9 +20,18 @@ def scrape_twitter():
     stock = request.args["stock"]
     since = request.args["since"]
     until = request.args["until"]
-    tweets = twitter.get_tweets(stock,since,until)
+    tweets = twitter.get_tweets(stock, since, until)
     tweets_json = json.loads(tweets)
     return jsonify(tweets_json)
+
+@app.route("/reddit")
+def scrape_reddit():
+    stock = request.args["stock"]
+    since = request.args["since"]
+    until = request.args["until"]
+    news = reddit.get_news(stock, since, until)
+    news_json = json.loads(news)
+    return jsonify(news_json)
 
 @app.route("/yahoo")
 def scrape_yahoo():
