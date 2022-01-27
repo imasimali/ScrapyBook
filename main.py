@@ -23,7 +23,7 @@ def scrape_twitter():
     tweets_json = json.loads(tweets)
     return jsonify(tweets_json)
 
-@app.route("/getyahoo")
+@app.route("/yahoo")
 def scrape_yahoo():
     stock = request.args["stock"]
     filename = time.strftime("%d%H%M%S")
@@ -32,7 +32,7 @@ def scrape_yahoo():
     df1 = json.loads(df.to_json(orient = "index"))
     return jsonify(df1)
 
-@app.route("/getreuters")
+@app.route("/reuters")
 def scrape_reuters():
     stock = request.args["stock"]
     filename = time.strftime("%d%H%M%S")
