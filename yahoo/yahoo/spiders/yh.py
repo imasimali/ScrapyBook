@@ -17,7 +17,7 @@ class YhSpider(scrapy.Spider):
 
     def parse(self, response):
         options = Options()
-        options.headless = True
+        options.headless= True
         firefox_profile = webdriver.FirefoxProfile()
         firefox_profile.set_preference('permissions.default.image', 2)
         firefox_profile.set_preference('dom.ipc.plugins.enabled.libflashplayer.so', 'false')
@@ -33,8 +33,10 @@ class YhSpider(scrapy.Spider):
         items_list = browser.find_elements_by_xpath('//*[@id="latestQuoteNewsStream-0-Stream"]/ul/li/div/div/div[2]/h3/a')
         
         num_of_items = 0
-        while num_of_items != len(items_list) or num_of_items <= 50:
+        while num_of_items != len(items_list):
             num_of_items = len(items_list)
+            if num_of_items > 200:
+              break
             l += 5000
             js = 'var q=document.documentElement.scrollTop=%d' %l
             browser.execute_script(js)

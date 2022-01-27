@@ -1,11 +1,11 @@
-from flask import Flask, request, redirect, url_for, jsonify, json
+from flask import Flask, request, jsonify, json
 import pandas as pd
 import os
 import time
-import requests
 import twitter
 import reddit
 import subprocess
+import pathlib as p
 
 app = Flask(__name__)
 
@@ -36,8 +36,10 @@ def scrape_reddit():
 @app.route("/yahoo")
 def scrape_yahoo():
     stock = request.args["stock"]
-    filename = time.strftime("%d%H%M%S")
-    subprocess.run('cd yahoo && scrapy crawl yh -a code='+stock+' -o '+filename+'.json && cd ..', shell=True)
+    filename = stock+time.strftime("%d")
+    path = p.Path('yahoo/'+filename+'.json')
+    if not (path.exists() and path.stat().st_size > 0):
+      subprocess.run('cd yahoo && scrapy crawl yh -a code='+stock+' -o '+filename+'.json && cd ..', shell=True)
     df = pd.read_json('yahoo/'+filename+'.json')
     df1 = json.loads(df.to_json(orient = "index"))
     return jsonify(df1)
@@ -45,10 +47,12 @@ def scrape_yahoo():
 @app.route("/reuters")
 def scrape_reuters():
     stock = request.args["stock"]
-    filename = time.strftime("%d%H%M%S")
-    subprocess.run('cd reuters && scrapy crawl rt -a code='+stock+' -o '+filename+'.json && cd ..', shell=True)
+    filename = stock+time.strftime("%d")
+    path = p.Path('reuters/'+filename+'.json')
+    if not (path.exists() and path.stat().st_size > 0):
+      subprocess.run('cd reuters && scrapy crawl rt -a code='+stock+' -o '+filename+'.json && cd ..', shell=True)
     df = pd.read_json('reuters/'+filename+'.json')
     df1 = json.loads(df.to_json(orient = "index"))
     return jsonify(df1)
 
-app.run(host='0.0.0.0', port=8080)
+app.run(host='0.0.0.0',port='8080')
