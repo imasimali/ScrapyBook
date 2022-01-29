@@ -4,7 +4,7 @@ import pandas as pd
 
 def get_news(stock, since, until):
   # Setting variables to be used below
-  maxNews = 10
+  maxNews = 15
 
   # Creating list to append tweet data to
   reddit_list = []
@@ -17,8 +17,8 @@ def get_news(stock, since, until):
 
 
   # Creating a dataframe from the news list above
-  news_df = pd.DataFrame(reddit_list, columns=['Datetime', 'Text'])
-  news_json = news_df.to_json(orient = "index", date_format='iso')
+  news_df = pd.DataFrame(reddit_list, columns=['dates', 'title'])
+  news_json = news_df.to_json(orient = "records", date_format='iso')
 
   # Export dataframe into a CSV
   # news_df.to_csv('news.csv', sep=',', index=False)

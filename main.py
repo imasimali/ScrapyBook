@@ -6,6 +6,7 @@ import twitter
 import reddit
 import subprocess
 import pathlib as p
+import shlex
 
 app = Flask(__name__)
 
@@ -39,10 +40,10 @@ def scrape_yahoo():
     filename = stock+time.strftime("%d")
     path = p.Path('yahoo/'+filename+'.json')
     if not (path.exists() and path.stat().st_size > 0):
-      with open("stderr.txt","wb") as err:
-        subprocess.Popen('cd yahoo && scrapy crawl yh -a code='+stock+' -o '+filename+'.json && cd ..', shell=True, stderr=err)
+      bashCommand = "scrapy crawl yh -a code="+stock+" -o "+filename+".json"
+      process = subprocess.run(shlex.split(bashCommand), cwd=r'yahoo/', stdout=subprocess.PIPE)
     df = pd.read_json('yahoo/'+filename+'.json')
-    df1 = json.loads(df.to_json(orient = "index"))
+    df1 = json.loads(df.to_json(orient = "records"))
     return jsonify(df1)
 
 @app.route("/reuters")
@@ -51,10 +52,10 @@ def scrape_reuters():
     filename = stock+time.strftime("%d")
     path = p.Path('reuters/'+filename+'.json')
     if not (path.exists() and path.stat().st_size > 0):
-      with open("stderr.txt","wb") as err:
-        subprocess.Popen('cd reuters && scrapy crawl rt -a code='+stock+' -o '+filename+'.json && cd ..', shell=True, stderr=err)
+      bashCommand = "scrapy crawl rt -a code="+stock+" -o "+filename+".json"
+      process = subprocess.run(shlex.split(bashCommand), cwd=r'reuters/', stdout=subprocess.PIPE)
     df = pd.read_json('reuters/'+filename+'.json')
-    df1 = json.loads(df.to_json(orient = "index"))
+    df1 = json.loads(df.to_json(orient = "records"))
     return jsonify(df1)
 
 app.run(host='0.0.0.0',port='8080')

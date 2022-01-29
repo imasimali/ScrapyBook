@@ -4,7 +4,7 @@ import pandas as pd
 
 def get_tweets(stock,since,until):
   # Setting variables to be used below
-  maxTweets = 10
+  maxTweets = 15
 
   # Creating list to append tweet data to
   tweets_list = []
@@ -16,8 +16,8 @@ def get_tweets(stock,since,until):
       tweets_list.append([tweet.date, tweet.content])
 
   # Creating a dataframe from the tweets list above
-  tweets_df = pd.DataFrame(tweets_list, columns=['Datetime', 'Text'])
-  tweets_json = tweets_df.to_json(orient = "index",date_format='iso')
+  tweets_df = pd.DataFrame(tweets_list, columns=['dates', 'title'])
+  tweets_json = tweets_df.to_json(orient = "records", date_format='iso')
 
   # Export dataframe into a CSV
   # tweets_df.to_csv('tweets.csv', sep=',', index=False)
