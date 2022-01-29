@@ -52,8 +52,8 @@ def scrape_reuters():
     filename = stock+time.strftime("%d")
     path = p.Path('reuters/'+filename+'.json')
     if not (path.exists() and path.stat().st_size > 0):
-      bashCommand = "scrapy crawl rt -a code="+stock+" -o "+filename+".json"
-      process = subprocess.run(shlex.split(bashCommand), cwd=r'reuters/', stdout=subprocess.PIPE)
+      bashCommand2 = "scrapy crawl rt -a code="+stock+" -o "+filename+".json"
+      process = subprocess.run(shlex.split(bashCommand2), cwd=r'reuters/', stdout=subprocess.PIPE)
     df = pd.read_json('reuters/'+filename+'.json')
     df1 = json.loads(df.to_json(orient = "records"))
     return jsonify(df1)
