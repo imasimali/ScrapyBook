@@ -41,7 +41,8 @@ def scrape_yahoo():
     path = p.Path('yahoo/'+filename+'.json')
     if not (path.exists() and path.stat().st_size > 0):
       bashCommand = "scrapy crawl yh -a code="+stock+" -o "+filename+".json"
-      process = subprocess.run(shlex.split(bashCommand), cwd=r'yahoo/', stdout=subprocess.PIPE)
+      process = subprocess.Popen(shlex.split(bashCommand), cwd=r'yahoo/', stdout=subprocess.PIPE)
+      output, error = process.communicate()
     df = pd.read_json('yahoo/'+filename+'.json')
     df1 = json.loads(df.to_json(orient = "records"))
     return jsonify(df1)
