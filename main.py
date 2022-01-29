@@ -13,7 +13,7 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 @app.route('/')
 def hello_world():
-  return '<h1>This is ScrapyBook backend!</h1></br><h3>You need commands to scrape!<h3/><h5>Contact Asim for help >> hi@asim.id<h5/>'
+  return '<h1>This is ScrapyBook backend!</h1></br><h3>You need commands to scrape!<h3/><h4>Contact Asim for help >> hi@asim.id<h4/>'
 
 @app.route("/twitter")
 def scrape_twitter():
@@ -39,7 +39,8 @@ def scrape_yahoo():
     filename = stock+time.strftime("%d")
     path = p.Path('yahoo/'+filename+'.json')
     if not (path.exists() and path.stat().st_size > 0):
-      subprocess.run('cd yahoo && scrapy crawl yh -a code='+stock+' -o '+filename+'.json && cd ..', shell=True)
+      with open("stderr.txt","wb") as err:
+        subprocess.Popen('cd yahoo && scrapy crawl yh -a code='+stock+' -o '+filename+'.json && cd ..', shell=True, stderr=err)
     df = pd.read_json('yahoo/'+filename+'.json')
     df1 = json.loads(df.to_json(orient = "index"))
     return jsonify(df1)
@@ -50,7 +51,8 @@ def scrape_reuters():
     filename = stock+time.strftime("%d")
     path = p.Path('reuters/'+filename+'.json')
     if not (path.exists() and path.stat().st_size > 0):
-      subprocess.run('cd reuters && scrapy crawl rt -a code='+stock+' -o '+filename+'.json && cd ..', shell=True)
+      with open("stderr.txt","wb") as err:
+        subprocess.Popen('cd reuters && scrapy crawl rt -a code='+stock+' -o '+filename+'.json && cd ..', shell=True, stderr=err)
     df = pd.read_json('reuters/'+filename+'.json')
     df1 = json.loads(df.to_json(orient = "index"))
     return jsonify(df1)

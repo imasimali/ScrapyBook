@@ -34,7 +34,7 @@ class RtSpider(scrapy.Spider):
         items_list = browser.find_elements_by_xpath('//*[@id="__next"]/div/div[4]/div[1]/div/div/div/div[2]/div/div/a')
         
         num_of_items = 0
-        while num_of_items <= 200:
+        while num_of_items <= 125:
             num_of_items = len(items_list)
             l += 5000
             js = 'var q=document.documentElement.scrollTop=%d' %l
